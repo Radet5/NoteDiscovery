@@ -1196,13 +1196,16 @@
                                             <span x-text="homepageFolders().length === 1 ? 'folder' : 'folders'"></span>
                                         </span>
                                         <button 
-                                            @click="createNote()"
-                                            class="ml-auto px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors"
+                                            @click="dropdownTargetFolder = selectedHomepageFolder; toggleNewDropdown($event)"
+                                            class="ml-auto px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors flex items-center gap-2"
                                             style="background-color: var(--accent-primary);"
                                             onmouseover="this.style.backgroundColor='var(--accent-hover)'"
                                             onmouseout="this.style.backgroundColor='var(--accent-primary)'"
                                         >
-                                            + New Note
+                                            <span>+ New</span>
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
                                         </button>
                                     </div>
                                 </div>
@@ -1217,13 +1220,16 @@
                                     <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">No notes yet</h2>
                                     <p class="mb-6" style="color: var(--text-secondary);">Create your first note to get started</p>
                                     <button 
-                                        @click="createNote()"
-                                        class="px-6 py-3 text-sm font-medium text-white rounded-lg transition-colors"
+                                        @click="dropdownTargetFolder = selectedHomepageFolder; toggleNewDropdown($event)"
+                                        class="px-6 py-3 text-sm font-medium text-white rounded-lg transition-colors flex items-center gap-2"
                                         style="background-color: var(--accent-primary);"
                                         onmouseover="this.style.backgroundColor='var(--accent-hover)'"
                                         onmouseout="this.style.backgroundColor='var(--accent-primary)'"
                                     >
-                                        Create Your First Note
+                                        <span>Create Your First Note</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
                                     </button>
                                 </div>
                             </template>
